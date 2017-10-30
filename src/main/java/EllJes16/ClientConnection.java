@@ -22,7 +22,7 @@ public class ClientConnection
             while(clientConnection == null)
                 clientConnection = server.accept();
 
-            System.out.println("New client connected!");
+            System.out.println("New client connected!\n");
             return clientConnection;
         }
         catch (IOException e)
