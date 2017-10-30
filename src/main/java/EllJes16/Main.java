@@ -9,9 +9,13 @@ public class Main
         Server server = new Server(3000);
         ClientConnection conn = new ClientConnection(server.getServer());
         IO_Controller io = new IO_Controller(conn.getConnection());
+        io.sendMessage("Get table SUBJECT -> 1\n" +
+                       "Get table TEACHER -> 2\n" +
+                       "Get table ROOM -> 3\n" +
+                       "Get SUBJECT PGR1100 -> 4\n" +
+                       "Get SUBJECT DB1100 -> 5\n" +
+                       "Write in your request...");
 
-        System.out.println(io.getMessage());
-        System.out.println("");
-        io.sendMessage("Hello to you too!\n");
+        io.sendMessage(io.getMessage());
     }
 }

@@ -3,16 +3,18 @@ package EllJes16.io;
 import java.io.IOException;
 import java.net.Socket;
 
+import static EllJes16.MessageAnalyzer.analyzeMessage;
+
 public class IO_Controller
 {
-    private ServerInput serverInput;
+    private ClientInput clientInput;
     private Output output;
 
     public IO_Controller(Socket conn)
     {
         try
         {
-            serverInput = new ServerInput(conn);
+            clientInput = new ClientInput(conn);
             output = new Output(conn);
 
         }
@@ -41,7 +43,8 @@ public class IO_Controller
         try
         {
             System.out.println("Fetching message...");
-            return serverInput.getMessage();
+            int message = clientInput.getMessage();
+            return analyzeMessage(message);
         }
         catch (IOException e)
         {
