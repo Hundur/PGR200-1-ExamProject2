@@ -14,5 +14,9 @@ public class Output
         output.flush();
     }
 
-    public DataOutputStream getOutput() { return output; }
+    public void sendMessage(String message) throws IOException
+    {
+        output.writeUTF(message);
+        output.flush();
+    }
 }

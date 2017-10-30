@@ -21,6 +21,20 @@ public class IO_Controller
         }
     }
 
+    public void sendMessage(String message)
+    {
+        try
+        {
+            System.out.println("Sending message...");
+            output.sendMessage(message);
+            System.out.println("Message sent!\n");
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
     public String getMessage()
     {
         try
