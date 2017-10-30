@@ -5,15 +5,16 @@ import java.net.Socket;
 
 public class IO_Controller
 {
-    private Input input;
+    private ServerInput serverInput;
     private Output output;
 
     public IO_Controller(Socket conn)
     {
         try
         {
-            input = new Input(conn);
+            serverInput = new ServerInput(conn);
             output = new Output(conn);
+
         }
         catch (IOException e)
         {
@@ -40,7 +41,7 @@ public class IO_Controller
         try
         {
             System.out.println("Fetching message...");
-            return input.getMessage();
+            return serverInput.getMessage();
         }
         catch (IOException e)
         {

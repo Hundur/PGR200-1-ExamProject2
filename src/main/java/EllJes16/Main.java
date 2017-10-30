@@ -11,6 +11,7 @@ public class Main
         IO_Controller io = new IO_Controller(conn.getConnection());
 
         System.out.println(io.getMessage());
+        System.out.println("");
         io.sendMessage("Hello to you too!\n");
     }
 }
