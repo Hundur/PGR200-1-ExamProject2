@@ -4,11 +4,11 @@ import java.io.DataInputStream;
 import java.io.IOException;
 import java.net.Socket;
 
-public class Input
+public class ServerInput
 {
     private DataInputStream input;
 
-    public Input(Socket conn) throws IOException
+    public ServerInput(Socket conn) throws IOException
     {
         input = new DataInputStream(conn.getInputStream());
     }
