@@ -1,6 +1,6 @@
-package EllJes16.Server;
+package EllJes16.server;
 
-import EllJes16.Server.io.IO_Controller;
+import EllJes16.server.io.IO_Controller;
 
 public class Main
 {

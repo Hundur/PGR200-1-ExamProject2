@@ -1,4 +1,4 @@
-package EllJes16;
+package EllJes16.client;
 
 import java.io.IOException;
 import java.net.Socket;

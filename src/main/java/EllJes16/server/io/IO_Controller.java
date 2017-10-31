@@ -1,9 +1,9 @@
-package EllJes16.Server.io;
+package EllJes16.server.io;
 
 import java.io.IOException;
 import java.net.Socket;
 
-import static EllJes16.Server.MessageAnalyzer.analyzeMessage;
+import static EllJes16.server.MessageAnalyzer.analyzeMessage;
 
 public class IO_Controller
 {
