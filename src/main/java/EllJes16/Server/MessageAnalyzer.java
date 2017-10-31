@@ -1,4 +1,4 @@
-package EllJes16;
+package EllJes16.Server;
 
 public class MessageAnalyzer
 {

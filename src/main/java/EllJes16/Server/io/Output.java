@@ -1,4 +1,4 @@
-package EllJes16.io;
+package EllJes16.Server.io;
 
 import java.io.DataOutputStream;
 import java.io.IOException;

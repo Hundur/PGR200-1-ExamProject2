@@ -4,17 +4,17 @@ import java.io.DataInputStream;
 import java.io.IOException;
 import java.net.Socket;
 
-public class ClientInput
+public class ServerInput
 {
     private DataInputStream input;
 
-    public ClientInput(Socket conn) throws IOException
+    public ServerInput(Socket conn) throws IOException
     {
         input = new DataInputStream(conn.getInputStream());
     }
 
-    public int getMessage() throws IOException
+    public String getMessage() throws IOException
     {
-        return input.readInt();
+        return input.readUTF();
     }
 }
