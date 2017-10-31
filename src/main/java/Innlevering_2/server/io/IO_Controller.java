@@ -1,21 +1,22 @@
-package EllJes16.client.io;
+package Innlevering_2.server.io;
 
 import java.io.IOException;
 import java.net.Socket;
 
+import static Innlevering_2.server.io.utils.MessageAnalyzer.analyzeMessage;
+
 public class IO_Controller
 {
-    private TerminalInput terminalInput;
-    private ServerInput serverInput;
+    private ClientInput clientInput;
     private Output output;
 
     public IO_Controller(Socket conn)
     {
         try
         {
-            terminalInput = new TerminalInput();
-            serverInput = new ServerInput(conn);
+            clientInput = new ClientInput(conn);
             output = new Output(conn);
+
         }
         catch (IOException e)
         {
@@ -23,11 +24,12 @@ public class IO_Controller
         }
     }
 
-    public void sendMessage()
+    public void sendMessage(String message)
     {
         try
         {
-            output.sendMessage(terminalInput.getTerminalInput());
+            System.out.println("Sending message...");
+            output.sendMessage(message);
             System.out.println("Message sent!\n");
         }
         catch (IOException e)
@@ -36,12 +38,13 @@ public class IO_Controller
         }
     }
 
-     public String getMessage()
+    public String getMessage()
     {
         try
         {
             System.out.println("Fetching message...");
-            return serverInput.getMessage();
+            int message = clientInput.getMessage();
+            return analyzeMessage(message);
         }
         catch (IOException e)
         {

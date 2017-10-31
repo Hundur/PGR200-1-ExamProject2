@@ -1,4 +1,4 @@
-package EllJes16.client.io;
+package Innlevering_2.client.io;
 
 import java.io.DataInputStream;
 import java.io.IOException;

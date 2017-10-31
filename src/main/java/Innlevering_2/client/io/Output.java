@@ -1,4 +1,4 @@
-package EllJes16.client.io;
+package Innlevering_2.client.io;
 
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -10,13 +10,13 @@ public class Output
 
     public Output(Socket conn) throws IOException
     {
-            output = new DataOutputStream(conn.getOutputStream());
-            output.flush();
+        output = new DataOutputStream(conn.getOutputStream());
+        output.flush();
     }
 
     public void sendMessage(int message) throws IOException
     {
-            output.writeInt(message);
-            output.flush();
+        output.writeInt(message);
+        output.flush();
     }
 }
