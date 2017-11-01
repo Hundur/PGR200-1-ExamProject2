@@ -21,6 +21,6 @@ public class DBInformation
     public static String getSubject(String subjectCode)
     {
         IO_Controller db = new IO_Controller("db.properties");
-        return db.getSpecifiedSubject(subjectCode);
+        return db.getSpecifiedSubject(subjectCode) + "\n";
     }
 }

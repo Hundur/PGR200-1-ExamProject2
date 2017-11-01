@@ -12,6 +12,7 @@ public class TerminalInput
     }
 
     // Todo: input.nextLine()
+    // Todo: help -> Server gives instructions
     public int getTerminalInput()
     {
         return (input.hasNext()) ? input.nextInt() : null;

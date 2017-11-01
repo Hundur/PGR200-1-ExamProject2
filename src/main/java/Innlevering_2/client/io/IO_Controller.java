@@ -28,7 +28,7 @@ public class IO_Controller
         try
         {
             output.sendMessage(terminalInput.getTerminalInput());
-            System.out.println("Message sent!\n");
+            System.out.println("\nMessage sent!\n");
         }
         catch (IOException e)
         {

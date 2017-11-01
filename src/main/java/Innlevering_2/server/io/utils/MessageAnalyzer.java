@@ -8,10 +8,12 @@ public class MessageAnalyzer
 
     public static String analyzeMessage(int message)
     {
-        String information;
+        String information = "";
 
         switch (message)
         {
+            case 0: // Todo: End connection
+                break;
             case 1: information = getTable("SUBJECT");
                 break;
             case 2: information = getTable("TEACHER");
@@ -22,7 +24,7 @@ public class MessageAnalyzer
                 break;
             case 5: information = getSubject("DB1100");
                 break;
-            default: information = "Not a command";
+            default: information = "Not a command\n";
                 break;
         }
 

@@ -6,11 +6,12 @@ public class MainClient
 {
     public static void main(String [] args)
     {
-        Client client = new Client("192.168.38.103", 3000);
-        IO_Controller io = new IO_Controller(client.getConnection());
+        //Todo: Find IPv4 address dynamically
+        Client client = new Client("10.32.11.19", 3000);
 
-        System.out.println(io.getMessage());
-        io.sendMessage();
-        System.out.println(io.getMessage());
+        if(client != null)
+        {
+            new ClientRuntime(client);
+        }
     }
 }
