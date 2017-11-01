@@ -42,8 +42,20 @@ public class IO_Controller
     {
         try
         {
+            int message;
+
             System.out.println("Fetching message...");
-            int message = clientInput.getMessage();
+            message = clientInput.getMessage();
+
+            if(message == 0)
+            {
+                clientInput.close();
+                output.close();
+                System.out.println("Client closed connection\n");
+
+                return "Closed";
+            }
+
             return analyzeMessage(message);
         }
         catch (IOException e)

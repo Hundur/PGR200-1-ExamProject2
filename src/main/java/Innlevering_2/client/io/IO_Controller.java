@@ -23,16 +23,30 @@ public class IO_Controller
         }
     }
 
-    public void sendMessage()
+    public boolean sendMessage()
     {
         try
         {
-            output.sendMessage(terminalInput.getTerminalInput());
+            int answer = terminalInput.getTerminalInput();
+
+            output.sendMessage(answer);
             System.out.println("\nMessage sent!\n");
+
+            if(answer == 0)
+            {
+                terminalInput.close();
+                serverInput.close();
+                output.close();
+
+                return false;
+            }
+
+            return true;
         }
         catch (IOException e)
         {
             e.printStackTrace();
+            return false;
         }
     }
 

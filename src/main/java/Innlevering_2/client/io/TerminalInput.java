@@ -17,4 +17,9 @@ public class TerminalInput
     {
         return (input.hasNext()) ? input.nextInt() : null;
     }
+
+    public void close()
+    {
+        input.close();
+    }
 }

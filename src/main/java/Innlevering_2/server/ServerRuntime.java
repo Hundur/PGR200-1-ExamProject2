@@ -17,7 +17,12 @@ public class ServerRuntime
 
         while(true)
         {
-            io.sendMessage(io.getMessage());
+            String message = io.getMessage();
+
+            if(message.equals("Closed"))
+                break;
+
+            io.sendMessage(message);
         }
     }
 }

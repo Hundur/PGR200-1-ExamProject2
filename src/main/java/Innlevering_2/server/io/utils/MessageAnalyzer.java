@@ -12,8 +12,6 @@ public class MessageAnalyzer
 
         switch (message)
         {
-            case 0: // Todo: End connection
-                break;
             case 1: information = getTable("SUBJECT");
                 break;
             case 2: information = getTable("TEACHER");

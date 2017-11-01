@@ -9,6 +9,7 @@ public class MainServer
         while(true)
         {
             ClientConnection conn = new ClientConnection(server.getServer());
+
             if(conn != null)
                 // Todo: Threaded solution
                 new ServerRuntime(conn);

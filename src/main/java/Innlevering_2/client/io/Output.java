@@ -19,4 +19,9 @@ public class Output
         output.writeInt(message);
         output.flush();
     }
+
+    public void close() throws IOException
+    {
+        output.close();
+    }
 }

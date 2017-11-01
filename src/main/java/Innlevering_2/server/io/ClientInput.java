@@ -17,4 +17,9 @@ public class ClientInput
     {
         return input.readInt();
     }
+
+    public void close() throws IOException
+    {
+        input.close();
+    }
 }

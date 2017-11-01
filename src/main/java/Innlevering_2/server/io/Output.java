@@ -19,4 +19,9 @@ public class Output
         output.writeUTF(message);
         output.flush();
     }
+
+    public void close() throws IOException
+    {
+        output.close();
+    }
 }

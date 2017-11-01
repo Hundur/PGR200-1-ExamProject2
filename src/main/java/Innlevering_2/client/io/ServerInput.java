@@ -17,4 +17,9 @@ public class ServerInput
     {
         return input.readUTF();
     }
+
+    public void close() throws IOException
+    {
+        input.close();
+    }
 }
