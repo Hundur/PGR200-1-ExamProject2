@@ -11,8 +11,7 @@ public class MainServer
             ClientConnection conn = new ClientConnection(server.getServer());
 
             if(conn != null)
-                // Todo: Threaded solution
-                new ServerRuntime(conn);
+                new Thread(new ServerRuntime(conn)).start();
         }
     }
 }
