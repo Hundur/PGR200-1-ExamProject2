@@ -42,12 +42,12 @@ public class IO_Controller
     {
         try
         {
-            int message;
+            String message;
 
             System.out.println("Fetching message...");
-            message = clientInput.getMessage();
+            message = clientInput.getMessage().toUpperCase();
 
-            if(message == 0)
+            if(message.equals("EXIT"))
             {
                 clientInput.close();
                 output.close();

@@ -27,20 +27,24 @@ public class IO_Controller
     {
         try
         {
-            int answer = terminalInput.getTerminalInput();
+            String answer = terminalInput.getTerminalInput();
 
             output.sendMessage(answer);
-            System.out.println("\nMessage sent!\n");
+            answer = answer.toLowerCase();
 
-            if(answer == 0)
+            if(answer.equals("exit"))
             {
                 terminalInput.close();
                 serverInput.close();
                 output.close();
 
+                System.out.println("Closing connection to server...\n" +
+                                   "See you next time!");
+
                 return false;
             }
 
+            System.out.println("\nMessage sent!\n");
             return true;
         }
         catch (IOException e)

@@ -1,5 +1,7 @@
 package Innlevering_2.server.io;
 
+import com.sun.org.apache.xpath.internal.SourceTree;
+
 import java.io.DataInputStream;
 import java.io.IOException;
 import java.net.Socket;
@@ -13,9 +15,9 @@ public class ClientInput
         input = new DataInputStream(conn.getInputStream());
     }
 
-    public int getMessage() throws IOException
+    public String getMessage() throws IOException
     {
-        return input.readInt();
+        return input.readUTF();
     }
 
     public void close() throws IOException

@@ -14,13 +14,9 @@ public class ServerRuntime implements Runnable
 
     public void run()
     {
-        io.sendMessage("0 -> End connection\n" +
-                "1 -> Get table SUBJECT\n" +
-                "2 -> Get table TEACHER\n" +
-                "3 -> Get table ROOM\n" +
-                "4 -> Get SUBJECT PGR1100\n" +
-                "5 -> Get SUBJECT DB1100\n" +
-                "Write in your request...\n");
+        io.sendMessage("Hello and welcome to the server!\n" +
+                       "If you don't know what to do, type \"Help\"\n" +
+                       "To exit, type \"Exit\"\n");
 
         while(true)
         {

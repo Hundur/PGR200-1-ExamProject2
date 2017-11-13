@@ -13,10 +13,7 @@ public class TerminalInput
 
     // Todo: input.nextLine()
     // Todo: help -> Server gives instructions
-    public int getTerminalInput()
-    {
-        return (input.hasNext()) ? input.nextInt() : null;
-    }
+    public String getTerminalInput() { return (input.hasNext()) ? input.nextLine() : null; }
 
     public void close()
     {
