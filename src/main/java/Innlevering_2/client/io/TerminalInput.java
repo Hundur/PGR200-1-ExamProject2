@@ -11,8 +11,6 @@ public class TerminalInput
         input = new Scanner(System.in);
     }
 
-    // Todo: input.nextLine()
-    // Todo: help -> Server gives instructions
     public String getTerminalInput() { return (input.hasNext()) ? input.nextLine() : null; }
 
     public void close()

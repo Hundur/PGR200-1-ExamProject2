@@ -13,8 +13,6 @@ public class MessageAnalyzer
         String information;
         String msg = message.trim();
 
-        //Todo: Check if the searchword actually is in the database before trying to get it
-
         if(msg.contains("GET TABLE"))
         {
             finalMsg = msg.replace("GET TABLE ", "");
