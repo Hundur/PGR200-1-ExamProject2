@@ -7,7 +7,6 @@ public class ClientRuntime
     public ClientRuntime(Client client)
     {
         IO_Controller io = new IO_Controller(client.getConnection());
-        boolean connected = true;
 
         System.out.println(io.getMessage());
 

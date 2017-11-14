@@ -17,7 +17,7 @@ public class MessageAnalyzer
         {
             finalMsg = msg.replace("GET TABLE ", "");
 
-            if(finalMsg.equals(""))
+            if(finalMsg.equals("GET TABLE"))
                 information = "Error: Missing searchword\n" +
                               "If you need help, type \"help\"\n";
             else if(structureCheckTable(finalMsg))
