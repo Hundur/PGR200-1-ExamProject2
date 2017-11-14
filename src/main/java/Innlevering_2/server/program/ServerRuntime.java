@@ -1,4 +1,4 @@
-package Innlevering_2.server;
+package Innlevering_2.server.program;
 
 import Innlevering_2.server.io.IO_Controller;
 
