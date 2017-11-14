@@ -1,28 +1,17 @@
 package Innlevering_2.client;
 
-import java.io.IOException;
-import java.net.Socket;
+import Innlevering_2.client.program.ClientInit;
+import Innlevering_2.client.program.ClientRuntime;
 
 public class Client
 {
-    private Socket serverConnection;
-
-    public Client(String serverAdr, int serverPort)
+    public static void main(String [] args)
     {
-        try
-        {
-            System.out.println("Trying to establish connection...");
-            serverConnection = new Socket(serverAdr, serverPort);
-            System.out.println("Connected!\n");
-        }
-        catch (IOException e)
-        {
-            e.printStackTrace();
-        }
-    }
+        ClientInit client = new ClientInit("localhost", 3000);
 
-    public Socket getConnection()
-    {
-        return serverConnection;
+        if(client != null)
+        {
+            new ClientRuntime(client);
+        }
     }
 }

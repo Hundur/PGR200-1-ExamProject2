@@ -1,10 +1,10 @@
-package Innlevering_2.client;
+package Innlevering_2.client.program;
 
 import Innlevering_2.client.io.IO_Controller;
 
 public class ClientRuntime
 {
-    public ClientRuntime(Client client)
+    public ClientRuntime(ClientInit client)
     {
         IO_Controller io = new IO_Controller(client.getConnection());
 

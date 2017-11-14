@@ -51,7 +51,7 @@ public class IO_Controller
             {
                 clientInput.close();
                 output.close();
-                System.out.println("Client closed connection\n");
+                System.out.println("ClientInit closed connection\n");
 
                 return "Closed";
             }

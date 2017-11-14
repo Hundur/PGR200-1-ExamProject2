@@ -1,23 +1,17 @@
 package Innlevering_2.server;
 
-import java.io.IOException;
-import java.net.ServerSocket;
-
 public class Server
 {
-    ServerSocket server;
-
-    public Server(int serverPort)
+    public static void main(String [] args)
     {
-        try
+        ServerInit server = new ServerInit(3000);
+
+        while(true)
         {
-            server = new ServerSocket(serverPort);
-        }
-        catch (IOException e)
-        {
-            e.printStackTrace();
+            ClientConnection conn = new ClientConnection(server.getServer());
+
+            if(conn != null)
+                new Thread(new ServerRuntime(conn)).start();
         }
     }
-
-    public ServerSocket getServer() { return server; }
 }
