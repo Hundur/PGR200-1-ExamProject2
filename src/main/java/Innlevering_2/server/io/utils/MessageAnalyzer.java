@@ -23,7 +23,7 @@ public class MessageAnalyzer
             else if(structureCheckTable(finalMsg))
                 information = getTable(finalMsg);
             else
-                information = "Error: " + finalMsg + " is not a valid table";
+                information = "Error: " + finalMsg + " is not a valid table\n";
         }
 
         else if(msg.contains("GET SUBJECT"))
@@ -33,7 +33,7 @@ public class MessageAnalyzer
             if(finalMsg.equals("GET SUBJECT"))
                 information = errorSearchword;
             else if(getSubject(finalMsg).equals("null\n"))
-                information = "Error: " + finalMsg + " is not a valid subjectcode";
+                information = "Error: " + finalMsg + " is not a valid subjectcode\n";
             else
                 information = getSubject(finalMsg);
         }
@@ -47,14 +47,14 @@ public class MessageAnalyzer
                 if (finalMsg.equals("GET TEACHER"))
                     information = errorSearchword;
                 else if (getTeacher(Integer.parseInt(finalMsg)).equals("null\n"))
-                    information = "Error: " + finalMsg + " is not a valid employeeID";
+                    information = "Error: " + finalMsg + " is not a valid employeeID\n";
                 else
                     information = getTeacher(Integer.parseInt(finalMsg));
             }
             catch(NumberFormatException e)
             {
                 e.printStackTrace();
-                return information = "Error: EmployeeID has to be a number";
+                return information = "Error: EmployeeID has to be a number\n";
             }
         }
 
@@ -65,7 +65,7 @@ public class MessageAnalyzer
             if(finalMsg.equals("GET ROOM"))
                 information = errorSearchword;
             else if(getRoom(finalMsg).equals("null\n"))
-                information = "Error: " + finalMsg + " is not a valid roomnumber";
+                information = "Error: " + finalMsg + " is not a valid roomnumber\n";
             else
                 information = getRoom(finalMsg);
         }
