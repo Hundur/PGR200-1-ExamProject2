@@ -26,6 +26,18 @@ public class DBInformation
         return db.getSpecifiedSubject(subjectCode) + "\n";
     }
 
+    public static String getRoom(String roomNumber)
+    {
+        IO_Controller db = new IO_Controller("db.properties");
+        return db.getSpecifiedRoom(roomNumber) + "\n";
+    }
+
+    public static String getTeacher(int employeeID)
+    {
+        IO_Controller db = new IO_Controller("db.properties");
+        return db.getSpecifiedTeacher(employeeID) + "\n";
+    }
+
     public static boolean structureCheckTable(String table)
     {
         try
