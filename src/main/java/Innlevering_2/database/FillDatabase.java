@@ -10,8 +10,8 @@ public class FillDatabase
 
         io.createTables();
         io.insertIntoTable(io.split(io.readInput("C:\\Users\\Bruker\\" +
-                                                         "IdeaProjects\\Innlevering_1\\" +
-                                                         "src\\test\\java\\Innlevering_1\\" +
-                                                         "TestSupplies\\DBTestInput")));
+                                                         "IdeaProjects\\Innlevering_2\\" +
+                                                         "src\\main\\" +
+                                                         "resources\\DBTestInput")));
     }
 }
