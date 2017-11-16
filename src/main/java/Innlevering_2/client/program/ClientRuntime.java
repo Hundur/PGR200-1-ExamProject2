@@ -1,19 +1,25 @@
 package Innlevering_2.client.program;
 
-import Innlevering_2.client.io.IO_Controller;
+import Innlevering_2.client.io.Client_IO_Controller;
+import Innlevering_2.client.io.TerminalInput;
 
 public class ClientRuntime
 {
     public ClientRuntime(ClientInit client)
     {
-        IO_Controller io = new IO_Controller(client.getConnection());
+        Client_IO_Controller io = new Client_IO_Controller(client.getConnection());
+        TerminalInput terminalInput = new TerminalInput();
 
         System.out.println(io.getMessage());
 
         while(true)
         {
-            if(io.sendMessage() == false)
+            String answer = terminalInput.getTerminalInput();
+            if(io.sendMessage(answer) == false)
+            {
+                terminalInput.close();
                 break;
+            }
 
             System.out.println(io.getMessage());
         }

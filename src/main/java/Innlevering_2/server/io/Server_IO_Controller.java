@@ -5,12 +5,12 @@ import java.net.Socket;
 
 import static Innlevering_2.server.io.utils.MessageAnalyzer.analyzeMessage;
 
-public class IO_Controller
+public class Server_IO_Controller
 {
     private ClientInput clientInput;
     private Output output;
 
-    public IO_Controller(Socket conn)
+    public Server_IO_Controller(Socket conn)
     {
         try
         {

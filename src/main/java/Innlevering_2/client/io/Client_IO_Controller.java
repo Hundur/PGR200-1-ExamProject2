@@ -3,17 +3,15 @@ package Innlevering_2.client.io;
 import java.io.IOException;
 import java.net.Socket;
 
-public class IO_Controller
+public class Client_IO_Controller
 {
-    private TerminalInput terminalInput;
     private ServerInput serverInput;
     private Output output;
 
-    public IO_Controller(Socket conn)
+    public Client_IO_Controller(Socket conn)
     {
         try
         {
-            terminalInput = new TerminalInput();
             serverInput = new ServerInput(conn);
             output = new Output(conn);
         }
@@ -23,18 +21,15 @@ public class IO_Controller
         }
     }
 
-    public boolean sendMessage()
+    public boolean sendMessage(String answer)
     {
         try
         {
-            String answer = terminalInput.getTerminalInput();
-
             output.sendMessage(answer);
             answer = answer.toLowerCase();
 
             if(answer.equals("exit"))
             {
-                terminalInput.close();
                 serverInput.close();
                 output.close();
 

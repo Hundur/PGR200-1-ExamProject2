@@ -1,14 +1,14 @@
 package Innlevering_2.server.program;
 
-import Innlevering_2.server.io.IO_Controller;
+import Innlevering_2.server.io.Server_IO_Controller;
 
 public class ServerRuntime implements Runnable
 {
 
-    private IO_Controller io;
+    private Server_IO_Controller io;
     public ServerRuntime(ClientConnection conn)
     {
-        io = new IO_Controller(conn.getConnection());
+        io = new Server_IO_Controller(conn.getConnection());
 
     }
 
