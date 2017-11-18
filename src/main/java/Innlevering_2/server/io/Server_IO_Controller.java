@@ -1,13 +1,16 @@
 package Innlevering_2.server.io;
 
+import Innlevering_1.io.IO_Controller;
+import Innlevering_1.utils.MessageAnalyzer;
+
 import java.io.IOException;
 import java.net.Socket;
-
-import static Innlevering_2.server.io.utils.MessageAnalyzer.analyzeMessage;
+import java.sql.SQLException;
 
 public class Server_IO_Controller
 {
     private ClientInput clientInput;
+    private MessageAnalyzer msgAnalyzer;
     private Output output;
 
     public Server_IO_Controller(Socket conn)
@@ -15,7 +18,9 @@ public class Server_IO_Controller
         try
         {
             clientInput = new ClientInput(conn);
+            msgAnalyzer = new MessageAnalyzer();
             output = new Output(conn);
+            new IO_Controller("db.properties");
 
         }
         catch (IOException e)
@@ -56,9 +61,14 @@ public class Server_IO_Controller
                 return "Closed";
             }
 
-            return analyzeMessage(message);
+            return msgAnalyzer.analyzeMessage(message);
         }
         catch (IOException e)
+        {
+            e.printStackTrace();
+            return null;
+        }
+        catch (SQLException e)
         {
             e.printStackTrace();
             return null;

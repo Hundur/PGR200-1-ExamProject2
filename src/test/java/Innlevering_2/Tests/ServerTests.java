@@ -9,7 +9,6 @@ import Innlevering_2.server.program.ServerInit;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static Innlevering_2.TestSupplies.TestUtils.*;
