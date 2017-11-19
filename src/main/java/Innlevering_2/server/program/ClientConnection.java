@@ -4,6 +4,11 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+/**
+ * Waits for a client to connect
+ *
+ * @author Jesper Dahl Ellingsen
+ */
 public class ClientConnection
 {
     private Socket clientConnection;
@@ -14,6 +19,11 @@ public class ClientConnection
         this.server = server;
     }
 
+    /**
+     * Waits for a clients request to connect and accepts the request
+     *
+     * @return the socket that holds the connection
+     */
     public Socket getConnection()
     {
         try

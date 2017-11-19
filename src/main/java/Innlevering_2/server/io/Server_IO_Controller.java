@@ -7,12 +7,22 @@ import java.io.IOException;
 import java.net.Socket;
 import java.sql.SQLException;
 
+/**
+ * IOController for the server
+ *
+ * @author Jesper Dahl Ellingsen
+ */
 public class Server_IO_Controller
 {
     private ClientInput clientInput;
     private MessageAnalyzer msgAnalyzer;
     private Output output;
 
+    /**
+     * Creates the IOController
+     *
+     * @param conn Connection to the client
+     */
     public Server_IO_Controller(Socket conn)
     {
         try
@@ -29,6 +39,11 @@ public class Server_IO_Controller
         }
     }
 
+    /**
+     * Sends a message to the client
+     *
+     * @param message Message to be sent
+     */
     public void sendMessage(String message)
     {
         try
@@ -43,6 +58,11 @@ public class Server_IO_Controller
         }
     }
 
+    /**
+     * Retrieves the message from the client
+     *
+     * @return The respond message to the client
+     */
     public String getMessage()
     {
         try

@@ -3,11 +3,21 @@ package Innlevering_2.client.io;
 import java.io.IOException;
 import java.net.Socket;
 
+/**
+ * The IO Controller for the client
+ *
+ * @Author Jesper Dahl Ellingsen
+ */
 public class Client_IO_Controller
 {
     private ServerInput serverInput;
     private Output output;
 
+    /**
+     * Creates the IO controller
+     *
+     * @param conn The connection to the server
+     */
     public Client_IO_Controller(Socket conn)
     {
         try
@@ -21,6 +31,12 @@ public class Client_IO_Controller
         }
     }
 
+    /**
+     * Sends a message to the server, if the message is "exit" the output and input will close
+     *
+     * @param answer Users message
+     * @return False if user writes exit, or the message was not sent
+     */
     public boolean sendMessage(String answer)
     {
         try
@@ -49,7 +65,12 @@ public class Client_IO_Controller
         }
     }
 
-     public String getMessage()
+    /**
+     * Retrieves a message from the server
+     *
+     * @return The message in form of a String or null if the message could not be retrieved
+     */
+    public String getMessage()
     {
         try
         {
